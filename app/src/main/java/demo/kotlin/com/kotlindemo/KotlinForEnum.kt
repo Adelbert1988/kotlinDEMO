@@ -36,3 +36,7 @@ fun exec(kotlinEnum: KotlinEnum) = when (kotlinEnum) {
 
     }
 }
+
+enum class KotlinEnum2{
+    BLUE, RED, GREEN
+}

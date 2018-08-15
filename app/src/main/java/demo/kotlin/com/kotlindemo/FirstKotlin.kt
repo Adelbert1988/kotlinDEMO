@@ -28,6 +28,8 @@ class Single private constructor(){
 
     fun doSingle() {
         println("doSingle")
+        KotlinSingleton2.instance.kotlinSingle()
+        KotlinSingletonThread2.instance.kotlinSingle()
     }
 }
 

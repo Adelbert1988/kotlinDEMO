@@ -19,6 +19,8 @@ object MyKt2{
 
     fun log(str: String) {
         println(str)
+
+        TestJava2Kt().test()
     }
 }
 

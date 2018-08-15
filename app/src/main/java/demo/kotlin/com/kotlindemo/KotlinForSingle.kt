@@ -10,6 +10,9 @@ package demo.kotlin.com.kotlindemo
 //最简单kotlin单例
 object KotlinSingleton {
     //null
+    fun kotlinSingle() {
+        println("this is KotlinSingleton")
+    }
 }
 
 // 在Kotlin 中调用
@@ -26,6 +29,10 @@ class KotlinSingleton1 private constructor() {
             instance = KotlinSingleton1()
         return instance
     }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingleton1")
+    }
 }
 
 //懒汉式单例2
@@ -34,6 +41,10 @@ class KotlinSingleton2 private constructor() {
         val instance by lazy(LazyThreadSafetyMode.NONE) {
             KotlinSingleton2()
         }
+    }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingleton2")
     }
 }
 
@@ -51,6 +62,10 @@ class KotlinSingletonThread private constructor() {
         if(instance == null)
             instance = KotlinSingletonThread()
         return instance
+    }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingletonThread")
     }
 }
 
@@ -70,6 +85,10 @@ class KotlinSingletonThread1 private constructor() {
         }
         return instance
     }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingletonThread1")
+    }
 }
 //方式二
 class KotlinSingletonThread2 private constructor() {
@@ -77,6 +96,10 @@ class KotlinSingletonThread2 private constructor() {
         val instance by lazy (mode = LazyThreadSafetyMode.SYNCHRONIZED){
             KotlinSingletonThread2()
         }
+    }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingletonThread2")
     }
 }
 
@@ -104,6 +127,10 @@ class KotlinSingletonThread3 private constructor() {
 
     private object Holder{
         val instance = KotlinSingletonThread3()
+    }
+
+    fun kotlinSingle() {
+        println("this is KotlinSingletonThread3")
     }
 }
 
