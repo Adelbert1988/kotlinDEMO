@@ -1,5 +1,8 @@
 package demo.kotlin.com.kotlindemo
 
+import java.io.BufferedReader
+import java.io.FileReader
+
 /**
  * User: chw
  * Date: 2018/7/31
@@ -59,3 +62,42 @@ object KotlinForRunTest1 {
    let函数跟run函数的区别是：let函数在函数内可以通过 it 指代该对象。
    跟?结合使用， let函数可以在对象不为 null 的时候执行函数内的代码，从而避免了空指针异常的出现
  */
+
+
+data class Persion(val name: String, val age: Int)
+
+fun main(args: Array<String>) {
+    findPersion()?.let { (name, age) ->
+        println("name: ${name}")
+        println("age: ${age}")
+    }
+
+    //apply可以直接使用调用者的对象
+    findPersion()?.apply {
+        println(name)
+    }
+
+    val br = BufferedReader(FileReader("hello.txt"))
+    with(br) {
+        var line: String?
+        while (true) {
+            line = readLine()?: break
+            println(line)
+        }
+
+        close()
+    }
+
+    //简写
+    BufferedReader(FileReader("hello.txt")).use {
+        var line: String?
+        while (true) {
+            line = it.readLine()?: break
+            println(line)
+        }
+    }
+}
+
+fun findPersion(): Persion? {
+    return null
+}
