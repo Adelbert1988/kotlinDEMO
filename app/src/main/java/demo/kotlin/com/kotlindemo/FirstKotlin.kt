@@ -1,5 +1,8 @@
 package demo.kotlin.com.kotlindemo
 
+import java.sql.DriverManager.println
+
+
 /**
  * User: chw
  * Date: 2018/7/24
@@ -10,7 +13,7 @@ object Test {
         if (StringUtils.isEmpty(str)) {
             return
         }
-        println("test str log " + str)
+        println("test str log $str")
     }
 }
 
